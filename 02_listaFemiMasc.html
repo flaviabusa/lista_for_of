@@ -12,14 +12,20 @@
     let nomesMasculinos = [];
     let invalidos = [];
 
-    for (let nome of listaDeNomes) {
-        let femMas = prompt(`Informe se o nome ${nome})
+    for (let nome of listaDeNomes){
+        let femMas = prompt(`Informe se o nome ${nome} é Masculino (M) ou Feminino (F)`).toUpperCase().trim();
+        if(femMas === "F"){
+            nomesFemininos.push(nome);
+        }
+        else if(femMas === "M"){
+            nomesMasculinos.push(nome);
+        }
+        else{
+            invalidos.push(nome)
+        }
     }
 
 
-    //PROCESSAMENTO
-
+    document.write(`Lista de nomes femininos: ${nomesFemininos.join(" - ")} <br> Lista de nomes Masculinos: ${nomesMasculinos.join(" - ")} <br> Inválidos: ${invalidos.join(" - ")} `);
     
-    //SAÍDA
-
 </script>
